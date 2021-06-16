@@ -1,0 +1,17 @@
+version: "2.0"
+
+rules:
+  - rule: Say thankyou anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_thankyou
+
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Thank you
+    steps:
+      - intent: thankyou
+      - action: utter_noworries

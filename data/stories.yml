@@ -1,0 +1,181 @@
+version: "2.0"
+
+stories:
+  - story: search has no keyword + price range
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - intent: inform_keyword
+      - action: action_check_price_range
+      - intent: inform_price_range
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: search has keyword + no price range + user inform price range
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - action: action_check_price_range
+      - intent: inform_price_range
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: search has keyword + no price range + user inform price range 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - action: action_check_price_range
+      - intent: affirm
+      - action: utter_name_your_price_range
+      - intent: inform_price_range
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: search has keyword + no price range + user DON'T inform price range
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - action: action_check_price_range
+      - intent: deny
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: search has keyword + price range
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - action: action_check_price_range
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+      - action: action_check_keyword
+      - intent: inform_keyword
+        entities:
+          - category: lập trình
+          - keyword: python
+      - slot_was_set:
+          - category: lập trình
+      - slot_was_set:
+          - keyword: python
+      - action: action_check_price_range
+      - intent: inform_price_range
+        entities:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - slot_was_set:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: interactive_story_2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+        entities:
+          - category: marketing
+      - slot_was_set:
+          - category: marketing
+      - action: action_check_price_range
+      - intent: deny
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: interactive_story_3
+    steps:
+      - intent: search
+        entities:
+          - keyword: chứng khoán
+      - slot_was_set:
+          - keyword: chứng khoán
+      - action: action_check_price_range
+      - intent: deny
+      - action: action_search
+      - action: utter_anything_else
+      - intent: search
+        entities:
+          - keyword: karate
+      - slot_was_set:
+          - keyword: karate
+      - action: action_check_price_range
+      - intent: deny
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: interactive_story_4
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+        entities:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - slot_was_set:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - action: action_check_keyword
+      - intent: deny
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou
+
+  - story: interactive_story_5
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: search
+        entities:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - slot_was_set:
+          - amount-of-money:
+              to: 100000
+              from: null
+      - action: action_check_keyword
+      - intent: inform_keyword
+        entities:
+          - category: lập trình
+      - slot_was_set:
+          - category: lập trình
+      - action: action_search
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_thankyou

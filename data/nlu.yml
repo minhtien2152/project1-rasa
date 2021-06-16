@@ -1,0 +1,153 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - xin chào
+    - chào
+    - chào bạn
+- intent: goodbye
+  examples: |
+    - bye
+    - bye nhé
+    - tạm biệt
+- intent: affirm
+  examples: |
+    - ừ
+    - đúng rồi
+    - có
+    - tất nhiên
+    - tất nhiên rồi
+    - đúng vậy
+    - yes
+    - yeb
+- intent: deny
+  examples: |
+    - no
+    - ko
+    - không
+    - không có
+    - không nhé
+- intent: thankyou
+  examples: |
+    - cảm ơn nhé
+    - thank you
+    - thanks
+    - tks
+    - cảm ơn bạn
+    - cảm ơn
+- intent: inform_keyword
+  examples: |
+    - [ngoại ngữ](category)
+    - [tiếng anh giao tiếp](keyword)
+    - [anh văn giao tiếp](keyword)
+    - [tiếng anh](keyword)
+    - [toeic](keyword)
+    - [ielts](keyword)
+    - [tiếng nhật](keyword)
+    - [tiếng hàn](keyword)
+    - [tiếng trung](keyword)
+    - [tin học văn phòng](category)
+    - [kinh doanh, khởi nghiệp](category)
+    - [marketing](category)
+    - [thiết kế](category)
+    - [phát triển bản thân](category)
+    - [sales, bán hàng](category)
+    - [sức khỏe](category)
+    - [lập trình](category)
+    - [lập trình](category) [python](keyword)
+    - hướng dẫn chơi [guitar](keyword)
+    - dạy [tin học văn phòng](category)
+    - thiết kế [AutoCAD](keyword)
+    - [làm chủ cảm xúc](keyword)
+    - [luyện trí nhớ](keyword)
+    - [excel](keyword)
+    - [excel cơ bản](keyword)
+    - tự học [excel nâng cao](keyword)
+    - cách làm slide [powerpoint chuyên nghiệp](keyword)
+    - tự học [kế toán](keyword)
+    - thành thạo [word](keyword)
+    - thành thạo [powerpoint](keyword)
+    - luyện thi [word](keyword)
+    - luyện thi [excel](keyword)
+    - làm chủ [excel](keyword)
+    - thực hành [excel](keyword)
+    - [soạn thảo văn bản](keyword)
+    - [word](keyword)
+    - [powerpoint](keyword)
+    - [lập trình](category) [web](keyword)
+    - cho tôi các khóa học về [winform](keyword)
+    - lập trình [c#](keyword)
+    - tôi muốn học lập trình [web](keyword)
+    - tìm hiểu về [docker](keyword)
+    - tôi muốn học [docker căn bản](keyword)
+    - mình muốn học [cấu trúc dữ liệu và giải thuật](keyword)
+    - mình muốn học cách lập trình [javascript](keyword)
+    - tôi muốn học [toán cao cấp](keyword)
+    - tôi muốn học [tiếng anh giao tiếp](keyword)
+    - tôi muốn tự học [tiếng trung cơ bản](keyword)
+    - tôi muốn học [guitar đệm hát](keyword)
+    - tôi cần học [kinh doanh online](keyword)
+    - [thần số học](keyword)
+    - khóa học về [3DMAX](keyword)
+    - tìm hiểu về [thu nhập thụ động](keyword)
+    - tôi muốn [kiếm tiền trên youtube](keyword)
+    - [forex](keyword)
+    - tôi đang muốn [khởi nghiệp](category)
+    - [facebook](keyword) [marketing](category)
+    - [xây dựng thương hiệu cá nhân](keyword)
+    - tôi đang muốn [xây dựng thương hiệu cá nhân](keyword)
+    - [tự làm chatbot](keyword)
+    - chỉ cho tôi cách tự học [lập trình](category)
+- intent: inform_price_range
+  examples: |
+    - dưới 100k
+    - trên 100k
+    - trên 2 triệu đồng
+    - dưới 1 triệu đồng
+    - từ 100k đến 900k
+    - từ 1 triệu đồng đến dưới 2 triệu đồng
+    - trong khoảng từ 30k đến 999k
+- intent: search
+  examples: |
+    - tôi đang muốn tìm kiếm khóa học online
+    - tôi muốn tìm khóa học để học thêm trong thời gian rảnh
+    - muốn kiếm một khóa học hay ho để học
+    - tìm giúp tôi 1 khóa học [chơi piano](keyword)
+    - tìm cho tôi các khóa học [tin học văn phòng](category)
+    - tôi muốn tìm khóa học [tiếng anh](keyword)
+    - tôi muốn học [thiết kế](category) với [3DS MAX](keyword)
+    - tôi muốn học [photoshop](keyword)
+    - tôi muốn học [lập trình](category) [react native](keyword)
+    - cho tôi các khóa học về [lập trình](category) [android](keyword)
+    - tôi muốn học [thiền](keyword)
+    - tôi muốn tìm một khóa [tiếng trung](keyword)
+    - cho tôi các khóa học [yoga](keyword) mà bạn có
+    - tôi muốn học chơi [guitar](keyword)
+    - kiếm cho mình khóa học dạy [nấu ăn](keyword)
+    - bạn có khóa học dạy [đánh trống](keyword)
+    - tôi muốn học [lập trình](category) [web](keyword)
+    - tôi muốn tìm hiểu về [marketing](category)
+    - tôi muốn học chơi [đàn organ](keyword)
+    - có khóa học chơi [ukulele](keyword) nào không?
+    - bạn có khóa học [ngoại ngữ](category) nào hay không ?
+    - tôi muốn học [dựng phim](keyword)
+    - tôi muốn học [lập trình game](keyword)
+    - tìm cho tôi một khóa [tiếng trung](keyword)
+    - tôi muốn học 1 khóa [thuyết trình trước đám đông](keyword)
+    - tôi muốn tự học [bơi](keyword)
+    - tôi đang muốn tự học [karate](keyword)
+    - tôi muốn học [lập trình](category) [ứng dụng di động](keyword)
+    - tôi đang muốn tìm hiểu về [chứng khoán](keyword)
+    - tôi muốn tìm một khóa học [tiếng anh](keyword) dưới 1 triệu đồng
+    - tôi muốn tìm khóa học [tiếng anh](keyword) dưới 500k
+    - tôi muốn học [thiết kế](category) với [3DS MAX](keyword) với ngân sách dưới 10 triệu đồng
+    - tôi muốn tìm một khóa [tiếng trung](keyword) dưới 100 nghìn đồng
+    - bạn có khóa học dạy [đánh trống](keyword) nào dưới 10 ngàn ko?
+    - tôi muốn học chơi [đàn organ](keyword) với ngân sách dưới 3 triệu VND
+    - bạn có khóa học [ngoại ngữ](category) nào trên 2 triệu VND không ?
+    - có khóa học nào về [phong thủy](keyword) với giá trên 2 trăm không?
+    - tôi đang muốn tìm hiểu về [chứng khoán](keyword)
+    - tôi đang muốn tự học [karate](keyword)

@@ -1,0 +1,53 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- search
+- deny
+- greet
+- inform_keyword
+- inform_price_range
+- goodbye
+- affirm
+- thankyou
+entities:
+- amount-of-money
+- category
+- keyword
+slots:
+  category:
+    type: text
+    influence_conversation: true
+  keyword:
+    type: text
+    influence_conversation: true
+  amount-of-money:
+    type: any
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Chào bạn tôi có thể giúp gì cho bạn?
+  utter_did_that_help:
+  - text: Bạn có hài lòng với kết quả không?
+  utter_thankyou:
+  - text: Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.
+  utter_anything_else:
+  - text: Bạn có muốn tôi giúp gì nữa không?
+  utter_search:
+  - text: '{category}, {keyword}, {amount-of-money}'
+  utter_ask_for_keyword:
+  - text: Bạn muốn tìm kiếm khóa học về lĩnh vực nào?
+  utter_ask_for_price_range:
+  - text: Bạn có muốn tìm theo tầm giá nào không?
+  utter_name_your_price_range:
+  - text: Hãy nêu tầm giá ban mong muốn?
+  utter_noworries:
+  - text: Không có gì. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.
+actions:
+- action_check_keyword
+- action_check_price_range
+- action_search
+- utter_anything_else
+- utter_greet
+- utter_thankyou
