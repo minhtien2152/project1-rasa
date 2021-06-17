@@ -1,79 +1,12 @@
 version: "2.0"
 
 stories:
-  - story: search has no keyword + price range
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: search
-      - action: action_check_keyword
-      - intent: inform_keyword
-      - action: action_check_price_range
-      - intent: inform_price_range
-      - action: action_search
-      - action: utter_anything_else
-      - intent: deny
-      - action: utter_thankyou
-
-  - story: search has keyword + no price range + user inform price range
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: search
-      - action: action_check_keyword
-      - action: action_check_price_range
-      - intent: inform_price_range
-      - action: action_search
-      - action: utter_anything_else
-      - intent: deny
-      - action: utter_thankyou
-
-  - story: search has keyword + no price range + user inform price range 2
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: search
-      - action: action_check_keyword
-      - action: action_check_price_range
-      - intent: affirm
-      - action: utter_name_your_price_range
-      - intent: inform_price_range
-      - action: action_search
-      - action: utter_anything_else
-      - intent: deny
-      - action: utter_thankyou
-
-  - story: search has keyword + no price range + user DON'T inform price range
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: search
-      - action: action_check_keyword
-      - action: action_check_price_range
-      - intent: deny
-      - action: action_search
-      - action: utter_anything_else
-      - intent: deny
-      - action: utter_thankyou
-
-  - story: search has keyword + price range
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: search
-      - action: action_check_keyword
-      - action: action_check_price_range
-      - action: action_search
-      - action: utter_anything_else
-      - intent: deny
-      - action: utter_thankyou
-
   - story: interactive_story_1
     steps:
       - intent: greet
       - action: utter_greet
       - intent: search
-      - action: action_check_keyword
+      - action: utter_ask_for_keyword
       - intent: inform_keyword
         entities:
           - category: lập trình
@@ -82,7 +15,7 @@ stories:
           - category: lập trình
       - slot_was_set:
           - keyword: python
-      - action: action_check_price_range
+      - action: utter_ask_for_price_range
       - intent: inform_price_range
         entities:
           - amount-of-money:
@@ -106,7 +39,7 @@ stories:
           - category: marketing
       - slot_was_set:
           - category: marketing
-      - action: action_check_price_range
+      - action: utter_ask_for_price_range
       - intent: deny
       - action: action_search
       - action: utter_anything_else
@@ -120,7 +53,7 @@ stories:
           - keyword: chứng khoán
       - slot_was_set:
           - keyword: chứng khoán
-      - action: action_check_price_range
+      - action: utter_ask_for_price_range
       - intent: deny
       - action: action_search
       - action: utter_anything_else
@@ -129,7 +62,7 @@ stories:
           - keyword: karate
       - slot_was_set:
           - keyword: karate
-      - action: action_check_price_range
+      - action: utter_ask_for_price_range
       - intent: deny
       - action: action_search
       - action: utter_anything_else
@@ -149,7 +82,7 @@ stories:
           - amount-of-money:
               to: 100000
               from: null
-      - action: action_check_keyword
+      - action: utter_ask_for_keyword
       - intent: deny
       - action: action_search
       - action: utter_anything_else
@@ -169,7 +102,7 @@ stories:
           - amount-of-money:
               to: 100000
               from: null
-      - action: action_check_keyword
+      - action: utter_ask_for_keyword
       - intent: inform_keyword
         entities:
           - category: lập trình
@@ -177,5 +110,21 @@ stories:
           - category: lập trình
       - action: action_search
       - action: utter_anything_else
+      - intent: ask_for_course_knowledge
+      - action: action_check_knowledge
+
+  - story: interactive_story_6
+    steps:
+      - intent: search
+        entities:
+          - keyword: tiếng hàn
+      - slot_was_set:
+          - keyword: tiếng hàn
+      - action: utter_ask_for_price_range
       - intent: deny
-      - action: utter_thankyou
+      - action: action_search
+      - slot_was_set:
+          - knowledge: "Phát âm tiếng Hàn chính xác, ngữ pháp chắc chắn, hội thoại tự nhiên như người Hàn\nTrang bị các kỹ năng cần thiết cho cuộc sống hàng ngày trong các tình huống thực tế.\nBạn có thể học từ vựng và ngữ pháp mới thông qua các ví dụ hàng ngày.\nBạn có thể cải thiện sự hiểu biết về tiếng Hàn thông qua các tài liệu khác nhau về từ vựng cơ bản, ngữ pháp, nói, nghe, viết và đọc.\nCơ hội việc làm mở rộng.\nTự tin xin việc tại các công ty Hàn Quốc."
+      - action: utter_anything_else
+      - intent: ask_for_course_knowledge
+      - action: action_check_knowledge

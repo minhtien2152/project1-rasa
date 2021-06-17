@@ -23,6 +23,14 @@ nlu:
     - đúng vậy
     - yes
     - yeb
+- intent: ask_for_course_knowledge
+  examples: |
+    - Tôi sẽ học được gì từ khóa học này?
+    - Khóa học này có lợi ích gì?
+    - khóa học này dạy những gì?
+    - tôi được gì từ khóa học này?
+    - khóa học này có những gì?
+    - tôi học được gì từ khóa học này
 - intent: deny
   examples: |
     - no
@@ -149,5 +157,4 @@ nlu:
     - tôi muốn học chơi [đàn organ](keyword) với ngân sách dưới 3 triệu VND
     - bạn có khóa học [ngoại ngữ](category) nào trên 2 triệu VND không ?
     - có khóa học nào về [phong thủy](keyword) với giá trên 2 trăm không?
-    - tôi đang muốn tìm hiểu về [chứng khoán](keyword)
-    - tôi đang muốn tự học [karate](keyword)
+    - tôi muốn học [tiếng hàn](keyword)

@@ -3,8 +3,9 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- search
 - deny
+- search
+- ask_for_course_knowledge
 - greet
 - inform_keyword
 - inform_price_range
@@ -25,6 +26,9 @@ slots:
   amount-of-money:
     type: any
     influence_conversation: false
+  knowledge:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Chào bạn tôi có thể giúp gì cho bạn?
@@ -44,10 +48,10 @@ responses:
   - text: Hãy nêu tầm giá ban mong muốn?
   utter_noworries:
   - text: Không có gì. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.
+  utter_no_course:
+  - text: Bạn chưa tìm kiếm khóa học nào hết
 actions:
-- action_check_keyword
-- action_check_price_range
+- action_check_knowledge
 - action_search
 - utter_anything_else
-- utter_greet
-- utter_thankyou
+- utter_ask_for_price_range
